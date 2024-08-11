@@ -11,6 +11,5 @@ namespace MediApp_API.Modelos
         public string Email { get; set; }
         public int Phone_Number { get; set; }
         public int Profile_Type { get; set; }
-        public DbSet<Patient> Patients { get; set; }
     }
 }

@@ -7,6 +7,5 @@ namespace MediApp_API.Modelos
         public int Id { get; set; }
         public string Address { get; set; }
         public int Specialty { get; set; }
-        public DbSet<Clinic> Clinics { get; set; }
     }
 }

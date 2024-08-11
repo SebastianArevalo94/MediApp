@@ -9,14 +9,15 @@ namespace MediApp_API.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
-        private readonly Patient _Context;
+        private readonly DataBaseContext _Context;
 
-        public PatientController (Patient context)
+        public PatientController (DataBaseContext context)
         {
             _Context = context;
         }
 
         [HttpGet]
+        [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatient()
         {
             if(_Context.Patients == null)
