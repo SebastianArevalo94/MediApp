@@ -9,17 +9,18 @@ namespace MediApp_API.Controllers
     [ApiController]
     public class ClinicController : ControllerBase
     {
-        private readonly Clinic _Context;
+        private readonly DataBaseContext _Context;
 
-        public ClinicController (Clinic context)
+        public ClinicController (DataBaseContext context)
         {
             _Context = context;
         }
 
         [HttpGet]
+        [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<Clinic>>> GetClinic()
         {
-            if(_Context.Clinics == null)
+            if (_Context.Clinics == null)
             {
                 return NotFound();
             }

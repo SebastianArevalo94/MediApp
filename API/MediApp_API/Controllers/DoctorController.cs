@@ -9,23 +9,23 @@ namespace MediApp_API.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
-        private readonly Doctor _Context;
+        private readonly DataBaseContext _Context;
 
-        public DoctorController (Doctor context)
+        public DoctorController (DataBaseContext context)
         {
             _Context = context;
         }
 
         [HttpGet]
+        [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<Doctor>>> GetDoctor()
         {
-            if(_Context.doctors == null)
+            if (_Context.Doctors == null)
             {
                 return NotFound();
             }
-            return await _Context.doctors.ToListAsync();
+            return await _Context.Doctors.ToListAsync();
         }
-
 
     }
 }

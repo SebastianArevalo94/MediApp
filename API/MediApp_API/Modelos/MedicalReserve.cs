@@ -6,8 +6,8 @@
         public int Id_Patient { get; set; }
         public int Id_Doctor { get; set; }
         public int Specialty { get; set; }
-        public int DateTime { get;}
-        public int Id_Clinic { get; }
+        public DateTime DateTime { get; set; }
+        public int Id_Clinic { get; set; }
 
     }
 }
